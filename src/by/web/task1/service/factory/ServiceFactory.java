@@ -2,6 +2,7 @@ package by.web.task1.service.factory;
 
 import by.web.task1.service.RoomService;
 import by.web.task1.service.ToyService;
+import by.web.task1.service.impl.AdminServiceImpl;
 import by.web.task1.service.impl.RoomSeviceImpl;
 import by.web.task1.service.impl.ToyServiceImpl;
 
@@ -9,6 +10,7 @@ public class ServiceFactory {
 	private static ServiceFactory instance;
 	private final RoomService RoomService = new RoomSeviceImpl();
 	private final ToyService ToyService = new ToyServiceImpl();
+	private final AdminServiceImpl AdminServiceImpl = new AdminServiceImpl();
 	
 	private ServiceFactory(){
 		
@@ -25,5 +27,8 @@ public class ServiceFactory {
 	}
 	public ToyService getToyService(){
 		return ToyService;
+	}
+	public AdminServiceImpl AdminService(){
+		return AdminServiceImpl;
 	}
 }
