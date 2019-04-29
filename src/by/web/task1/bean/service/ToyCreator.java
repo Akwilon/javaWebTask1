@@ -4,13 +4,13 @@ import java.util.Random;
 
 import by.web.task1.bean.SizeOfToy;
 import by.web.task1.bean.Toy;
-import by.web.task1.bean.TypeOfToy;
+import by.web.task1.bean.toy.Ball;
 
 public class ToyCreator {
 	Random ran = new Random();
 	
 	public Toy create() {
-		Toy toy = new Toy(randomSize(),randomType());
+		Toy toy = new Ball(randomSize(),randomPrice());
 		return toy;
 	}
 	
@@ -19,8 +19,7 @@ public class ToyCreator {
 		return SizeOfToy.values()[pickSize];
 	}
 	
-	private TypeOfToy randomType() {
-		int pickToy = ran.nextInt(TypeOfToy.values().length);
-		return TypeOfToy.values()[pickToy];
+	private int randomPrice() {
+		return ran.nextInt(15);
 	}
 }
