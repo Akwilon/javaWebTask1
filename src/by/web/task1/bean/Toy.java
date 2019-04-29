@@ -1,19 +1,24 @@
 package by.web.task1.bean;
 
-public class Toy {
-	private SizeOfToy size;
-	private TypeOfToy type;
-	/**
-	 * @param size
-	 * @param type
-	 */
-	public Toy(SizeOfToy size, TypeOfToy type) {
+public abstract class Toy {
+	private final SizeOfToy size;
+	private int price;
+
+	public Toy(SizeOfToy size, int price ) {
 		this.size = size;
-		this.type = type;
+		this.price = price;
 	}
 	
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	public int getPrice() {
+		return price;
+	}
 	
-	
+	public SizeOfToy getSize() {
+		return size;
+	}
 	
 	
 	
@@ -22,10 +27,11 @@ public class Toy {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + price;
 		result = prime * result + ((size == null) ? 0 : size.hashCode());
-		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -35,23 +41,21 @@ public class Toy {
 		if (getClass() != obj.getClass())
 			return false;
 		Toy other = (Toy) obj;
-		if (size != other.size)
+		if (price != other.price)
 			return false;
-		if (type != other.type)
+		if (size != other.size)
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Toy [size=");
 		builder.append(size);
-		builder.append(", type=");
-		builder.append(type);
+		builder.append(", price=");
+		builder.append(price);
 		builder.append("]");
 		return builder.toString();
 	}
-
-	
-	
 }
