@@ -10,7 +10,7 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public void addNewRoom(int ageType) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
