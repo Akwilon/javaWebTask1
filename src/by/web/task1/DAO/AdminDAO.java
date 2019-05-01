@@ -1,5 +1,7 @@
 package by.web.task1.DAO;
 
+import by.web.task1.DAO.exception.DAOException;
+
 public interface AdminDAO {
-	void signIn(String login, String pass);
+	boolean signIn(String login, String pass) throws DAOException;
 }
