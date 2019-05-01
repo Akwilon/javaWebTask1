@@ -4,11 +4,11 @@ import java.util.List;
 
 public abstract class Room {
 	private List <? extends Toy> toys;
-	private int age;
+	private int maxAge;
 
 	
-	public Room(int age) {
-		this.age = age;
+	public Room(int maxAge) {
+		this.maxAge = maxAge;
 	}
 
 
@@ -17,8 +17,8 @@ public abstract class Room {
 	}
 
 
-	public int getAge() {
-		return age;
+	public int getMaxAge() {
+		return maxAge;
 	}
 
 
@@ -27,8 +27,8 @@ public abstract class Room {
 	}
 
 
-	public void setAge(int age) {
-		this.age = age;
+	public void setMaxAge(int maxAge) {
+		this.maxAge = maxAge;
 	}
 
 
@@ -37,15 +37,13 @@ public abstract class Room {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Room [toys=");
 		builder.append(toys);
-		builder.append(", age=");
-		builder.append(age);
+		builder.append(", maxAge=");
+		builder.append(maxAge);
 		builder.append("]");
 		return builder.toString();
 	}
-
-
-
-
-
-
+	
+	
+	
+	
 }

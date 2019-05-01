@@ -2,10 +2,13 @@ package by.web.task1.bean;
 
 public abstract class Toy {
 	private final SizeOfToy size;
+	private final Color color;
 	private int price;
 
-	public Toy(SizeOfToy size, int price ) {
+	public Toy(Color color, SizeOfToy size, int price ) {
+		this.color = color;
 		this.size = size;
+		// this.size = Optional.of(size).isPresent() ? size:SizeOfToy.MIDDLE ;
 		this.price = price;
 	}
 	
@@ -21,8 +24,10 @@ public abstract class Toy {
 	}
 	
 	
-	
-	
+	public Color getColor() {
+		return color;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
